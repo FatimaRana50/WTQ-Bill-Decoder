@@ -1,2 +1,37 @@
 2026-10-10 12:33:45,481 INFO Level 1: IESCO_0002
 2026-10-10 12:33:45,670 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:33:48,927 INFO IESCO_0002: primary reading failed checks: ['total_charges + total_taxes = 68130.00 but current_bill is 69897']
+2026-10-10 12:33:49,871 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:33:54,071 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:33:56,856 WARNING IESCO_0002: unresolved checks (kept as printed): ['total_charges + total_taxes = 33323.00 but current_bill is 38323']
+2026-10-10 12:33:56,864 INFO Level 1: IESCO_0003
+2026-10-10 12:33:58,271 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:34:01,016 INFO Level 1: IESCO_0005
+2026-10-10 12:34:02,472 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:34:05,192 INFO Level 1: KESC_0002
+2026-10-10 12:34:06,672 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:34:10,247 INFO Level 1: KESC_0003
+2026-10-10 12:34:10,872 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:34:14,365 INFO Level 1: KESC_0005
+2026-10-10 12:34:15,073 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:34:18,470 INFO Level 1: KESC_0006
+2026-10-10 12:34:19,273 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:34:22,785 INFO Level 1: LESCO_0001
+2026-10-10 12:34:23,474 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:34:26,496 INFO Level 1: LESCO_0002
+2026-10-10 12:34:27,674 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:34:30,706 INFO Level 1: LESCO_0008
+2026-10-10 12:34:31,874 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:34:35,722 INFO LESCO_0008: primary reading failed checks: ['total_charges + total_taxes = 1910.00 but current_bill is 1678.5']
+2026-10-10 12:34:36,075 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:34:40,275 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:34:43,203 WARNING LESCO_0008: unresolved checks (kept as printed): ['total_charges + total_taxes = 1910.00 but current_bill is 1678.5']
+2026-10-10 12:34:43,233 INFO Wrote ..\output\level1.csv
+2026-10-10 12:34:43,234 INFO Level 2: IESCO_0002 (12 questions)
+2026-10-10 12:34:44,475 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:34:48,675 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:34:52,876 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:34:57,080 INFO Level 2: IESCO_0003 (12 questions)
+2026-10-10 12:34:57,217 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:35:01,614 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:35:05,814 INFO AFC is enabled with max remote calls: 10.
