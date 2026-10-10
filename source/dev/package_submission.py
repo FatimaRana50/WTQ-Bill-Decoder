@@ -5,8 +5,9 @@ import zipfile
 from pathlib import Path
 
 SOURCE = Path(__file__).resolve().parent.parent
-SKIP_DIRS = {".venv", ".cache", "__pycache__", ".pytest_cache", "dev_out", ".git"}
-SKIP_FILES = {".env"}
+SKIP_DIRS = {".venv", ".cache", "__pycache__", ".pytest_cache", "dev_out", ".git",
+             "node_modules", "dist", ".output", ".vinxi", ".tanstack", ".nitro", ".wrangler"}
+SKIP_FILES = {".env", ".env.local", "package-lock.json.bak"}
 LIMIT = 15 * 1024 * 1024
 
 

@@ -1,0 +1,8 @@
+﻿# Optional extras: demo UIs and the HTTP API (not needed to generate the CSV files)
+-r requirements.txt
+streamlit==1.65.0
+pandas==3.0.6
+fastapi==0.143.0
+uvicorn==0.54.0
+python-multipart==0.0.32
+pytest==9.1.1
