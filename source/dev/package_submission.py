@@ -9,6 +9,10 @@ SKIP_DIRS = {".venv", ".cache", "__pycache__", ".pytest_cache", "dev_out", ".git
              "node_modules", "dist", ".output", ".vinxi", ".tanstack", ".nitro", ".wrangler"}
 SKIP_FILES = {".env", ".env.local", "package-lock.json.bak"}
 LIMIT = 15 * 1024 * 1024
+# The submission portal rejects unusual file types inside source/ (e.g. .prettierignore, .lock, .toml, .ico),
+# so only common source/text types are packaged. Skipped files are tooling config the project does not need to run.
+ALLOWED_EXT = {".py", ".md", ".txt", ".json", ".ts", ".tsx", ".js", ".css", ".csv"}
+ALLOWED_NAMES = {".env.example"}
 
 
 def main(out_dir: Path, zip_path: Path, demo: Path | None) -> None:
@@ -18,6 +22,9 @@ def main(out_dir: Path, zip_path: Path, demo: Path | None) -> None:
         for path in sorted(SOURCE.rglob("*")):
             rel = path.relative_to(SOURCE)
             if path.is_dir() or SKIP_DIRS & set(rel.parts) or path.name in SKIP_FILES or path.suffix == ".pyc":
+                continue
+            if path.name not in ALLOWED_NAMES and path.suffix.lower() not in ALLOWED_EXT:
+                print(f"skipped (file type not allowed by the portal): source/{rel.as_posix()}")
                 continue
             zf.write(path, f"source/{rel.as_posix()}")
         if demo:

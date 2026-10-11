@@ -1,4 +1,4 @@
-"""All prompt text lives here so it is easy to review and tune."""
+﻿"""All prompt text lives here so it is easy to review and tune."""
 
 L1_SYSTEM = """You are a meticulous data-entry clerk reading Pakistani electricity bills (K-Electric, LESCO, IESCO).
 The image may be a scan, screenshot or tilted photo, partly in Urdu. Names, addresses and ID numbers are hidden by grey boxes.
@@ -51,35 +51,30 @@ L1_EXAMPLE = """EXAMPLE (K-Electric bill, for format only; your values must come
 """
 
 PROVIDER_HINTS = {
-    "KE": "This is a K-Electric (KE) bill. Charges and taxes are itemised in the 'Bill Calculation' table: lines from 'Fixed Charges' down to the 'Electricity Charges' subtotal are charges; lines under 'Taxes and Duties' (up to its subtotal) are taxes. 'Previous Dues' is arrears. Late-payment amounts (5% / 10% LPS) appear in boxes and in the table; use the highest.",
+    "KE": "This is a K-Electric (KE) bill. Charges and taxes are itemised in the 'Bill Calculation' table: lines from 'Fixed Charges' down to the 'Electricity Charges' subtotal are charges; lines under 'Taxes and Duties' (up to its subtotal) are taxes. 'Previous Dues' is arrears. Late-payment amounts (5% / 10% LPS) appear in boxes and in the table; use the highest. units_consumed is the figure in the header box 'Current Month ... N units =' (the total billed units, which already adds Peak and Off-Peak registers when the meter table has several rows); previous_reading / current_reading come from the FIRST row of the 'Electricity You Have Used' meter table.",
     "LESCO": "This is a LESCO bill. Look at the 'BILL CHARGES BREAKDOWN' block (Total Electricity Charges, Subsidies, Net Electricity Charges, Taxes, Current Bill, Arrears, Grand Total), the meter table, and the header boxes for dates and payable amounts. A grand total printed with 'CR' is a credit, so negative.",
     "IESCO": "This is an IESCO bill. Look at the 'BILL CHARGES BREAKDOWN' block (Total Electricity Charges, Subsidies, Net Electricity Charges, Taxes, Current Bill, Arrears, Total FPA, Grand Total), the meter table, and the header boxes for dates and payable amounts (late-payment surcharge boxes list amounts up to / after a date; use the highest).",
 }
+
+# Row-order guidance shared by the LESCO and IESCO breakdown blocks (their numbers can sit slightly off their labels in tilted photos).
+BREAKDOWN_HINT = (
+    " The breakdown is a vertical list of labels with one number per label, in this order: Total Electricity Charges, Subsidies, "
+    "Net Electricity Charges (its share % is printed beside it), Taxes (its share % is printed beside it), Current Bill, Grand Total; "
+    "Arrears / Installment / Adjustments / Total FPA sit in a second column. In tilted photos a number can sit slightly above or below "
+    "its label, so match numbers to labels in order and never skip one: Taxes has its own number, between Net Electricity Charges and "
+    "Current Bill. Sanity-check what you read against the printed % split and totals "
+    "(Net = Total - Subsidies; Current Bill is about Net + Taxes; Grand Total is about Current Bill + Arrears + Total FPA when FPA is printed separately), "
+    "but write down what is PRINTED, never a recomputed value. "
+    "If a non-zero 'Total FPA' (or FPA / FCA) amount is printed in this block, include it as one 'fpa' entry in charges."
+)
+PROVIDER_HINTS["LESCO"] += BREAKDOWN_HINT
+PROVIDER_HINTS["IESCO"] += BREAKDOWN_HINT
 
 GENERIC_HINT = "Identify which company issued the bill (K-Electric = KE, LESCO or IESCO) from the logo and layout."
 
 
 def l1_user_prompt(hint: str) -> str:
     return f"{hint}\n\n{L1_EXAMPLE}\nNow read the attached bill image and return the JSON object."
-
-
-def l1_refine_prompt(candidate: dict, issues: list[str], other: dict | None, diffs: list[str]) -> str:
-    import json
-
-    parts = [
-        "Below is a draft extraction of the attached bill. Automatic checks flagged possible misreads:",
-        *[f"- {i}" for i in issues],
-    ]
-    if other is not None and diffs:
-        parts.append(f"A second independent reading disagrees on these fields: {', '.join(diffs)}.")
-        parts.append("Second reading: " + json.dumps(other))
-    parts += [
-        "Draft: " + json.dumps(candidate),
-        "Look at the image again, focusing on the flagged and disputed values. Fix ONLY values you can see were misread. "
-        "If the printed bill genuinely contains the inconsistency, keep the printed values (do not recalculate). "
-        "Return the complete corrected JSON object with the same keys.",
-    ]
-    return "\n".join(parts)
 
 
 FACTS_SYSTEM = """You transcribe electricity bills (K-Electric, LESCO, IESCO) into a complete fact sheet for answering customer questions.
@@ -104,6 +99,7 @@ For counting or filtering, pass the COMPLETE list of values from the history and
 Never decide by eye which values qualify. Provide separate calculations with and without the current month when it matters.
 Use only numbers that appear on the bill. If a question needs no arithmetic, or needs data the bill does not show, use an empty list.
 Consider both readings of ambiguous questions (e.g. history with and without the current month).
+For estimate / projection / "roughly" questions always plan at least one estimate calculation from bill figures (e.g. current bill / units * units asked about, average of the monthly bill amounts, average or trend of monthly units).
 Reply with ONLY JSON: {"Q1": [{"name": "what it computes", "expression": "..."}], "Q2": [], ...} covering every question id."""
 
 QA_SYSTEM = """You are a helpful, precise assistant explaining one electricity bill to a customer in plain English.
@@ -113,6 +109,8 @@ RULES
 - Numbers must be right. Use the pre-computed calculation results for all arithmetic; do not compute in your head. If something needed was not computed, only use figures printed on the bill.
 - Never use outside tariff, rate or regulatory knowledge. If the bill does not show something needed, say clearly that the bill does not show it, and explain what it does show instead of guessing.
 - If a value is an estimate or projection, say it is an estimate and show how you calculated it (inputs and method).
+- When a question asks for an estimate, projection or "roughly" ("what would my bill be", "how much should I set aside", "how many units should I expect"), ALWAYS give a clearly labelled estimate built only from bill figures, with the method and its limits stated. Examples: this month's average cost per unit (current bill / units) x the units in question; the average of the monthly bill amounts the bill shows, or this month's bill x 12 / 12; the average or trend of the monthly units shown. Mention what the estimate ignores (e.g. fixed charges, slab rates, taxes). Say the bill does not show the information only when NO bill figure can support even a rough estimate.
+- Answer the question that was asked first, in one sentence, then give supporting figures.
 - If a question can be read more than one way, state the interpretation you used, or answer both (e.g. history with or without the current month).
 - Be specific: lead with the direct answer and the exact figures (PKR, units, month names), then briefly explain. Mention the relevant bill lines. Keep each answer to a few sentences.
 - Never include names, addresses, ID/reference/consumer/meter numbers.
@@ -144,3 +142,4 @@ def qa_user_prompt(bill: dict, facts: dict, questions: list[tuple[str, str]], ca
         + "Pre-computed calculation results (exact, from code), by question id:\n" + json.dumps(calcs) + "\n\n"
         'Reply with ONLY a JSON array like [{"question_id":"Q1","answer":"..."}, ...] covering every question id.'
     )
+

@@ -35,3 +35,40 @@
 2026-10-10 12:34:57,217 INFO AFC is enabled with max remote calls: 10.
 2026-10-10 12:35:01,614 INFO AFC is enabled with max remote calls: 10.
 2026-10-10 12:35:05,814 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:35:09,600 INFO Level 2: IESCO_0005 (12 questions)
+2026-10-10 12:35:10,014 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:35:15,540 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:35:20,385 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:35:24,310 INFO Level 2: KESC_0002 (12 questions)
+2026-10-10 12:35:24,593 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:35:30,828 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:35:35,030 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:35:39,531 INFO Level 2: KESC_0003 (12 questions)
+2026-10-10 12:35:39,750 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:35:45,840 WARNING Malformed JSON, asking again
+2026-10-10 12:35:45,843 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:35:51,735 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:35:55,936 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:36:00,826 INFO Level 2: KESC_0005 (12 questions)
+2026-10-10 12:36:01,023 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:36:06,756 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:36:11,268 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:36:15,661 INFO Level 2: KESC_0006 (12 questions)
+2026-10-10 12:36:15,880 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:36:21,994 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:36:26,195 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:36:30,656 INFO Level 2: LESCO_0001 (12 questions)
+2026-10-10 12:36:30,787 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:36:36,025 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:36:40,226 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:36:43,991 INFO Level 2: LESCO_0002 (12 questions)
+2026-10-10 12:36:44,426 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:36:50,234 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:36:54,598 WARNING Malformed JSON, asking again
+2026-10-10 12:36:54,599 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:36:58,800 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:37:02,676 INFO Level 2: LESCO_0008 (12 questions)
+2026-10-10 12:37:03,001 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:37:16,051 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:37:20,252 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:37:24,238 INFO Wrote ..\output\level2.csv

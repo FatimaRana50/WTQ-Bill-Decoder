@@ -43,6 +43,16 @@ def test_check_flags_inconsistency():
     assert check(bill) == []
 
 
+def test_vote_outvotes_a_single_misread():
+    from bill_decoder.extract import vote
+
+    base = {"provider": "IESCO", "total_taxes": 8516, "charges": [{"type": "energy", "amount": 100}]}
+    readings = [dict(base, total_taxes=3516), dict(base), dict(base), dict(base, charges=[])]
+    voted = vote(readings)
+    assert voted["total_taxes"] == 8516
+    assert voted["charges"] == [{"type": "energy", "amount": 100}]
+
+
 def test_calculator_is_safe_and_correct():
     assert calculate("avg([239, 203, 187])") == "209.666667"
     assert calculate("569.62 / 3430.24 * 100").startswith("16.6")

@@ -32,7 +32,8 @@ def check(bill: dict[str, Any]) -> list[str]:
             issues.append(f"taxes sum to {total:.2f} but total_taxes is {bill['total_taxes']}")
 
     prev, cur, units = bill.get("previous_reading"), bill.get("current_reading"), bill.get("units_consumed")
-    if None not in (prev, cur, units) and not _close(cur - prev, units, 0.5):
+    # K-Electric bills with Peak/Off-Peak registers print the total units in the header, not the first row's difference.
+    if bill.get("provider") != "KE" and None not in (prev, cur, units) and not _close(cur - prev, units, 0.5):
         issues.append(f"current_reading - previous_reading = {cur - prev} but units_consumed is {units}")
 
     tc, tt, cb = bill.get("total_charges"), bill.get("total_taxes"), bill.get("current_bill")

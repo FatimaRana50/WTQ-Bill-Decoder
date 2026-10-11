@@ -1,0 +1,75 @@
+2026-10-10 12:40:52,235 INFO Level 1: IESCO_0002
+2026-10-10 12:40:52,379 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:40:55,420 INFO IESCO_0002: primary reading failed checks: ['total_charges + total_taxes = 33323.00 but current_bill is 38323']
+2026-10-10 12:40:56,580 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:41:02,446 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:41:06,646 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:41:10,846 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:41:13,309 INFO Level 1: IESCO_0003
+2026-10-10 12:41:15,047 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:41:17,676 INFO Level 1: IESCO_0005
+2026-10-10 12:41:19,247 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:41:21,720 INFO Level 1: KESC_0002
+2026-10-10 12:41:23,448 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:41:26,399 INFO Level 1: KESC_0003
+2026-10-10 12:41:27,648 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:41:30,855 INFO Level 1: KESC_0005
+2026-10-10 12:41:31,849 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:41:34,827 INFO Level 1: KESC_0006
+2026-10-10 12:41:36,049 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:41:39,246 INFO Level 1: LESCO_0001
+2026-10-10 12:41:40,250 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:41:42,659 INFO Level 1: LESCO_0002
+2026-10-10 12:41:44,450 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:41:46,818 INFO Level 1: LESCO_0008
+2026-10-10 12:41:48,650 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:41:52,086 INFO LESCO_0008: primary reading failed checks: ['total_charges + total_taxes = 1910.00 but current_bill is 1678.5']
+2026-10-10 12:41:52,851 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:41:57,051 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:42:01,252 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:42:05,452 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:42:08,782 WARNING LESCO_0008: unresolved checks after voting (values kept as read): ['total_charges + total_taxes = 1910.00 but current_bill is 1678.5']
+2026-10-10 12:42:08,805 INFO Wrote ..\output\level1.csv
+2026-10-10 12:42:08,806 INFO Level 2: IESCO_0002 (12 questions)
+2026-10-10 12:42:09,653 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:42:13,854 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:42:18,054 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:42:22,272 INFO Level 2: IESCO_0003 (12 questions)
+2026-10-10 12:42:22,389 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:42:26,589 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:42:31,284 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:42:34,641 INFO Level 2: IESCO_0005 (12 questions)
+2026-10-10 12:42:35,484 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:42:39,937 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:42:44,303 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:42:48,354 INFO Level 2: KESC_0002 (12 questions)
+2026-10-10 12:42:48,574 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:42:54,669 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:42:58,870 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:43:02,986 INFO Level 2: KESC_0003 (12 questions)
+2026-10-10 12:43:03,184 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:43:09,347 WARNING Malformed JSON, asking again
+2026-10-10 12:43:09,352 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:43:15,168 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:43:19,369 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:43:23,605 INFO Level 2: KESC_0005 (12 questions)
+2026-10-10 12:43:23,899 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:43:30,107 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:43:34,526 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:43:38,884 INFO Level 2: KESC_0006 (12 questions)
+2026-10-10 12:43:39,092 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:43:45,155 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:43:49,355 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:43:54,449 INFO Level 2: LESCO_0001 (12 questions)
+2026-10-10 12:43:54,645 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:43:59,834 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:44:04,035 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:44:07,448 INFO Level 2: LESCO_0002 (12 questions)
+2026-10-10 12:44:08,235 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:44:13,315 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:44:17,516 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:44:21,141 INFO Level 2: LESCO_0008 (12 questions)
+2026-10-10 12:44:21,716 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:44:27,606 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:44:32,064 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:44:36,749 INFO Wrote ..\output\level2.csv

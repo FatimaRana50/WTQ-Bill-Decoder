@@ -1,0 +1,43 @@
+2026-10-10 12:44:48,429 INFO Level 1: IESCO_0002
+2026-10-10 12:44:48,445 INFO Level 1: IESCO_0003
+2026-10-10 12:44:48,450 INFO Level 1: IESCO_0005
+2026-10-10 12:44:48,455 INFO Level 1: KESC_0002
+2026-10-10 12:44:48,464 INFO Level 1: KESC_0003
+2026-10-10 12:44:48,471 INFO Level 1: KESC_0005
+2026-10-10 12:44:48,479 INFO Level 1: KESC_0006
+2026-10-10 12:44:48,486 INFO Level 1: LESCO_0001
+2026-10-10 12:44:48,492 INFO Level 1: LESCO_0002
+2026-10-10 12:44:48,497 INFO Level 1: LESCO_0008
+2026-10-10 12:44:48,504 INFO Wrote ..\output\level1.csv
+2026-10-10 12:44:48,509 INFO Level 2: IESCO_0002 (12 questions)
+2026-10-10 12:44:48,643 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:44:54,743 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:44:58,560 INFO Level 2: IESCO_0003 (12 questions)
+2026-10-10 12:44:58,943 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:45:03,557 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:45:07,134 INFO Level 2: IESCO_0005 (12 questions)
+2026-10-10 12:45:07,757 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:45:12,025 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:45:15,752 INFO Level 2: KESC_0002 (12 questions)
+2026-10-10 12:45:16,225 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:45:20,425 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:45:24,831 INFO Level 2: KESC_0003 (12 questions)
+2026-10-10 12:45:25,040 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:45:29,241 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:45:33,676 INFO Level 2: KESC_0005 (12 questions)
+2026-10-10 12:45:33,892 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:45:38,093 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:45:42,574 INFO Level 2: KESC_0006 (12 questions)
+2026-10-10 12:45:42,789 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:45:47,577 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:45:52,056 INFO Level 2: LESCO_0001 (12 questions)
+2026-10-10 12:45:52,187 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:45:56,693 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:46:00,327 INFO Level 2: LESCO_0002 (12 questions)
+2026-10-10 12:46:00,894 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:46:05,094 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:46:09,295 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:46:11,668 INFO Level 2: LESCO_0008 (12 questions)
+2026-10-10 12:46:13,495 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:46:17,696 INFO AFC is enabled with max remote calls: 10.
+2026-10-10 12:46:21,511 INFO Wrote ..\output\level2.csv
